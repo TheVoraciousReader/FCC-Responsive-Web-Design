@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Technical Documentation: CSS </title>
+    <meta name="author" content="Shwetha .A">
+    <meta name="description" content="CSS Technical Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+    <header> Cascading Style Sheets (CSS) Documentation </header>  
+    <ul>
+    <li><a href="#Introduction" class="nav-link"> Introduction </a></li>
+    <li><a href="#Prerequisites" class="nav-link"> Prerequisites </a></li>
+    <li><a href="#Syntax" class="nav-link"> Syntax </a></li>
+    <li><a href="#Changing_the_default_behavior_of_elements" class="nav-link"> Changing the default behavior of elements </a></li>  
+    <li><a href="#Styling_things_based_on_their_location_in_a_document" class="nav-link"> Styling things based on their location in a document </a></li>  
+    <li><a href="#Styling_things_based_on_state" class="nav-link"> Styling things based on state </a></li>  
+    <li><a href="#Applying_CSS_to_HTML" class="nav-link"> Applying CSS to HTML </a></li>  
+    <li><a href="#Functions" class="nav-link"> Functions </a></li>
+    <li><a href="#Reference" class="nav-link"> Reference </a></li>
+    </ul>
+    </nav>
+
+    <main id="main-doc">
+    <section id="Introduction" class="main-section">
+    <header>Introduction</header>
+    <article>
+    <p> CSS (Cascading Style Sheets) allows you to create great-looking web pages,
+    but how does it work under the hood? This article explains what CSS is, with a simple syntax example, 
+    and also covers some key terms about the language.</p>
+
+    <p> CSS is a language for specifying how documents are presented to users — how they are styled, laid out, etc.
+    A document is usually a text file structured using a markup language — HTML is the most common markup language, but you 
+    may also come across other markup languages such as SVG or XML.</p>
+
+    <p>Presenting a document to a user means converting it into a form usable by your audience. Browsers, like Firefox, 
+    Chrome, or Edge , are designed to present documents visually, for example, on a computer screen, projector or printer.</p>
+
+    <p>CSS can be used for very basic document text styling — for example changing the color and size of headings and links. 
+    It can be used to create layout — for example turning a single column of text into a layout with a main content area 
+    and a sidebar for related information. It can even be used for effects such as animation. </p>
+    </article>
+    </section>
+
+    <section id="Prerequisites" class="main-section">
+    <header>Prerequisites</header>
+    <article>
+    <p> This guide assumes you have the following basic background: </p>
+    <ul>
+    <li> Basic computer literacy </li>
+    <li> Essential software installed </li>
+    <li> General knowledge of HyperText Markup Language (HTML) and its basics </li>
+    <li> Some kind of programming experience </li>
+    </ul>
+    </article>
+    </section>
+
+    <section id="Syntax" class="main-section">
+    <header>Syntax</header>
+    <article>
+    <p> CSS is a rule-based language — you define rules specifying groups of styles that should be applied to particular elements or groups of elements on your web page. 
+    For example "I want the main heading on my page to be shown as large red text." </p>
+
+    <p> The following code shows a very simple CSS rule that would achieve the styling described above: </p>
+
+    <pre>
+    <code>
+    h1 {
+    color: red;
+    font-size: 5em;
+    }
+    </code>
+    </pre>
+
+    <p> The rule opens with a selector . This selects the HTML element that we are going to style. In this case we are styling level one headings (&lt;h1&gt;).
+        We then have a set of curly braces { }. Inside those will be one or more declarations, which take the form of property and value pairs. 
+        Each pair specifies a property of the element(s) we are selecting, then a value that we'd like to give the property. </p>
+
+    <p>Before the colon, we have the property, and after the colon, the value. CSS properties have different allowable values, 
+        depending on which property is being specified. In our example, we have the color property, which can take various color values.
+        We also have the font-size property. This property can take various size units as a value. </p>
+
+    <p> A CSS stylesheet will contain many such rules, written one after the other. </p>
+
+    
+    <pre>
+    <code>
+    h1 {
+    color: red;
+    font-size: 5em;
+    }
+
+    p {
+    color: black;
+    }
+    </code>
+    </pre>
+
+    <p> You will find that you quickly learn some values, whereas others you will need to look up.
+    The individual property pages on MDN give you a quick way to look up properties and their values when you forget,
+    or want to know what else you can use as a value. </p>
+
+    </article>
+    </section>
+
+
+    <section id="Changing_the_default_behavior_of_elements" class="main-section">
+    <header>Changing the default behavior of elements</header>
+    <article>
+
+    <p>When we look at a well-marked up HTML document, even something as simple as our example, we can see how the browser 
+    is making the HTML readable by adding some default styling. Headings are large and bold and our list has bullets.
+    This happens because browsers have internal stylesheets containing default styles, which they apply to all pages by default; 
+    without them all of the text would run together in a clump and we would have to style everything from scratch.
+    All modern browsers display HTML content by default in pretty much the same way. </p>
+
+    <p>However, you will often want something other than the choice the browser has made. 
+    This can be done by choosing the HTML element that you want to change, and using a CSS rule to change the way it looks. 
+    A good example is our &lt;ul&gt;, an unordered list. It has list bullets, and if I decide I don't want those bullets I can remove them like so: </p>
+    
+    <pre>
+    <code>
+    li{
+    list-style-type: none;
+    }
+    </code>
+    </pre>
+
+    <p>Try adding this to your CSS now. <br> The list-style-type property is a good property to look at on MDN 
+        to see which values are supported. Take a look at the page for list-style-type and you will find 
+        an interactive example at the top of the page to try some different values in, then all allowable values are detailed further down the page.
+    </p>
+
+    </article>
+
+    <section id="Styling_things_based_on_their_location_in_a_document" class="main-section">
+    <header> Styling things based on their location in a document </header>
+    <article>
+    <p>There are times when you will want something to look different based on where it is in the document. 
+        There are a number of selectors that can help you here, but for now we will look at just a couple. In our document, 
+        assume there are two &lt;em&gt; elements — one inside a paragraph and the other inside a list item. To select only an &lt;em&gt; that
+        is nested inside an &lt;li&gt; element I can use a selector called the descendant combinator, which takes the form of a space between two other selectors.
+
+        <br> Add the following rule to your stylesheet.
+
+    </p>
+
+    <pre>
+    <code>
+    li em {
+    color: rebeccapurple;
+    }
+    </code>
+    </pre>
+
+    <p> This selector will select any &lt;em&gt; element that is inside (a descendant of) an &lt;li&gt;.
+    So in your example document, you should find that the &lt;em&gt; in the third list item is now purple, but the one inside the paragraph is unchanged.</p>
+
+    <p> Something else you might like to try is styling a paragraph when it comes directly after a heading at the same hierarchy level in the HTML. 
+    To do so place a + (an adjacent sibling combinator) between the selectors. <br>
+
+    Try adding this rule to your stylesheet as well:
+
+    </p>
+    
+    <pre>
+    <code>
+    h1 + p {
+    font-size: 200%;
+    }
+    </code>
+    </pre>
+
+    </article>
+    </section>
+
+    <section id="Styling_things_based_on_state" class="main-section">
+    <header> Styling things based on state</header>
+    <article>
+    <p> The final type of styling we shall take a look at in this tutorial is the ability to style things based on their state.
+    A straightforward example of this is when styling links. When we style a link we need to target the &lt;a&gt; (anchor) element.
+    This has different states depending on whether it is unvisited, visited, being hovered over, focused via the keyboard, 
+    or in the process of being clicked (activated). You can use CSS to target these different states — the CSS below styles unvisited links
+    pink and visited links green.</p>
+
+    <pre>
+    <code>
+
+    a:link {
+    color: pink;
+    }
+
+    a:visited {
+    color: green;
+    }
+
+    </code>
+    </pre>
+
+    <p> You can change the way the link looks when the user hovers over it, for example by removing the underline, which is achieved by the next rule: </p>
+
+    <pre>
+    <code>
+
+    a:hover {
+    text-decoration: none;
+    }
+    </code>
+    </pre>
+
+    </article>
+    </section>
+
+    </section>
+
+
+    <section id="Applying_CSS_to_HTML" class="main-section">
+    <header>Applying CSS to HTML</header>
+
+    <article>
+    <p> First, let's examine three methods of applying CSS to a document:
+    with an external stylesheet, with an internal stylesheet, and with inline styles.</p>
+
+    <h3> External stylesheet </h3>
+    <p> An external stylesheet contains CSS in a separate file with a .css extension. 
+    This is the most common and useful method of bringing CSS to a document. You can link a single CSS file to multiple web pages, 
+    styling all of them with the same CSS stylesheet. In the Getting started with CSS, we linked an external stylesheet to our web page.
+    You reference an external CSS stylesheet from an HTML &lt;link&gt; element:
+    </p>
+    <pre>
+    <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title>My CSS experiment&lt;/title&gt;
+        &lt;link rel="stylesheet" href="styles.css"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;h1&gt;Hello World!&lt;/h1&gt;
+        &lt;p&gt;This is my first CSS example&lt;/p&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </code>
+    </pre>
+    
+    <p>The href attribute of the &lt;link&gt; element needs to reference a file on your file system. In the example above, 
+    the CSS file is in the same folder as the HTML document, but you could place it somewhere else and adjust the path. </p>
+
+    <h3> Internal stylesheet </h3>
+    <p> An internal stylesheet resides within an HTML document. To create an internal stylesheet, 
+        you place CSS inside a &lt;style&gt; element contained inside the HTML &lt;head&gt; </p>
+        
+    <p>The HTML for an internal stylesheet might look like this:</p>
+
+    <pre>
+    <code>
+        
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title>My CSS experiment&lt;/title&gt;
+        &lt;style&gt;
+        h1 { 
+        color: blue;
+        background-color: yellow;
+        border: 1px solid black;
+        }
+
+        p {
+        color: red;
+        }
+       &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;h1&gt;Hello World!&lt;/h1&gt;
+        &lt;p&gt;This is my first CSS example&lt;/p&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+
+    </code>
+    </pre>
+
+    <p>In some circumstances, internal stylesheets can be useful. For example, perhaps you're working with a content management system 
+        where you are blocked from modifying external CSS files. <br> But for sites with more than one page, an internal stylesheet becomes a less efficient way
+         of working. To apply uniform CSS styling to multiple pages using internal stylesheets, you must 
+         have an internal stylesheet in every web page that will use the styling. 
+         The efficiency penalty carries over to site maintenance too. With CSS in 
+         internal stylesheets, there is the risk that even one simple styling change may require edits to multiple web pages.
+    </p>
+
+    <h3> Inline styles </h3>
+    <p> Inline styles are CSS declarations that affect a single HTML element, contained within a style attribute. 
+        The implementation of an inline style in an HTML document might look like this: </p>
+
+    <pre>
+    <code>
+
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title>My CSS experiment&lt;/title&gt;
+        &lt;link rel="stylesheet" href="styles.css"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;h1 style="color: blue;background-color: yellow;border: 1px solid black;"&gt;Hello World!&lt;/h1&gt;
+        &lt;p style="color:red;"&gt;This is my first CSS example&lt;/p&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+
+    </code>
+    </pre>
+
+    <p> Avoid using CSS in this way, when possible. It is the opposite of a best practice. First, it is the least efficient implementation of CSS for maintenance. 
+        One styling change might require multiple edits within a single web page. 
+        Second, inline CSS also mixes (CSS) presentational code with HTML and content, making everything more difficult to read and understand. 
+        Separating code and content makes maintenance easier for all who work on the website.
+        <br>
+        There are a few circumstances where inline styles are more common. You might have to resort to using inline styles if
+        your working environment is very restrictive. For example, perhaps your CMS only allows you to edit the HTML body. 
+        You may also see a lot of inline styles in HTML email to achieve compatibility with as many email clients as possible.
+
+    </p>
+
+    </article>
+
+    </section>
+
+
+    <section id="Functions" class="main-section">
+    <header>Functions</header>
+    <article>
+    
+    <p> While most values are relatively simple keywords or numeric values, there are some 
+        values that take the form of a function. An example would be the calc() function, which can do simple math within CSS:
+    </p>
+
+    <pre>
+    <code>
+        &lt;div class="outer"&gt;&lt;div class="box"&gt;The inner box is 90% - 30px.&lt;/div&gt;&lt;/div&gt;
+    </code>
+    </pre>
+
+    <pre>
+    <code>
+    .outer {
+    border: 5px solid black;
+    }
+      
+    .box {
+    padding: 10px;
+    width: calc(90% - 30px);
+    background-color: rebeccapurple;
+    color: white;
+    }
+    </code>
+    </pre>
+
+    <p>A function consists of the function name, and parentheses to enclose the values for the function. 
+        In the case of the calc() example above, the values define the width of this box to be 90% of 
+        the containing block width, minus 30 pixels. The result of the calculation isn't something that 
+        can be computed in advance and entered as a static value.
+        
+        Another example would be the rotate() function. Other examples include functions for tranform, linear gradients or for color, 
+        in particular rgb/rgba/hsl/hsla values.
+    </p>
+
+    </article>
+
+    </section>
+
+
+    <section id="Reference" class="main-section">
+    <header>Reference</header>
+    <article>
+    <ul>
+        <li> All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN</a>. </li>
+    </ul>
+    </article>
+    </section>
+
+    </main>
+    <!--<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>-->
+</body>
+</html>

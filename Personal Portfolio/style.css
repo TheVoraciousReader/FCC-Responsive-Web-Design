@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* general styling */
+
+body{
+    font-family: 'Open Sans',sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #CBCAD8;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* header and nav ~ welcome section*/
+
+#welcome-section header {
+    position: fixed;
+    width: 100%;
+    height: 45px;
+    background-color: #CBCAD8;
+}
+
+#navbar {
+    top: 0;
+    min-height: 35px;
+    height: 40px;
+    width: 100%;
+}
+
+#navbar ul{
+    list-style: none;
+    float: right;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar a {
+    text-decoration: none;
+    padding: 10px;
+    color: #24243e;
+}
+
+#navbar a:hover {
+    background-color: #24243e;
+    color: white;
+}
+
+/* about me section */
+
+#about {
+    background: linear-gradient(20deg, #0f0c29 0%, #302b63 , #24243e 75%);
+    background: -moz-linear-gradient(20deg, #0f0c29 0%, #302b63 , #24243e 75%);
+    background: -webkit-linear-gradient(20deg, #0f0c29 0%, #302b63 , #24243e 75%);
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 700px;
+    height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+#about h2 {
+    font-weight: lighter;
+    font-style: italic;
+}
+
+/* projects section */
+
+#projects {
+    background-color: rgba(99, 48, 43, 0.8);
+}
+
+#projects a {
+    text-decoration: none;
+    color: white;
+}
+
+#projects #project {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-tile {
+    margin-top: 5em;
+    margin-left: 5em;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+    width: 20%;
+    border-radius: 3px;
+}
+
+.project-tile:hover {
+    box-shadow: 0 8px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.project-tile img {
+    width: 100%;
+    height: 150px;
+    border-radius: 3px 3px 0 0;
+}
+
+.project-desc {
+    padding: 2px 16px;
+}
+
+/* contact section */
+
+#contacts {
+    background-color: rgba(43, 99, 48, 0.8);
+}
+
+#contacts a {
+    text-decoration: none;
+    color: black;
+}
+
+#contacts .contact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.contact-card {
+    width: 10%;
+    position: relative;
+    transition: top ease 0.5s;
+}
+
+.contact-card:hover {
+    top: -10px;
+}
+
+.contact-card img {
+    width: 25px;
+    height: 25px;
+}
+
+.contact-desc {
+    padding: 2px 4px;
+}
+/* footer */
+
+footer {
+    display: block;
+    padding: 15px;
+    border-top: 3px solid #CBCAD8;
+    background-color: #24243e;
+    color: white;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 600px) {
+    body {
+    font-size: 60%;
+    }
+
+    #navbar ul{
+        float: none;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        font-size: 80%;
+    }
+}

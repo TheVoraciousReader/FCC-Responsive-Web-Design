@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* general styling */
+
+body {
+ font-family: 'Playfair Display', sans-serif;
+ font-weight: bold;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ background-color: #f1ece8;
+}
+
+/* header & navbar */
+
+.container {
+ clear: both;
+ overflow: auto;
+}
+
+#header{
+ display: flex;
+ align-items: center;
+ margin: 15px;
+ position: fixed;
+ background-color: transparent;
+ width: 100%;
+}
+
+#header #header-img {
+  height: 50px;
+  width: 50px;
+  float: left;
+}
+
+#nav-bar a{
+  float: right;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+ 
+#nav-bar ul li{
+  display: inline-block;
+  padding: 10px;
+}
+   
+#nav-bar ul li:hover{
+  background-color: white;
+  text-shadow: 2.5px 3px #CAC531; 
+}
+
+/* media queries */
+
+@media (max-width: 600px) {
+ header {
+  flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 650px) {
+  #nav-bar {
+   flex-direction: column;
+  }
+}
+
+/* email section */
+
+#mail {
+ padding-top: 10%;
+}
+
+#form {
+ display: flex;
+ flex-direction: column;
+ padding: 20px;
+ align-items: center;
+}
+
+#form input[type='email']{
+ height: 40px;
+ width: 80%;
+ border: 0.1px solid grey;
+}
+
+#form #submit {
+ height: 50px;
+ width: 150px;
+ background-color:#62616f;
+ color: white;
+ border: 1px solid #62616f;
+}
+
+#form #submit:hover{
+ border-radius: 5%;
+ background-color: #313138;
+ border: 1px solid #313138;
+}
+
+/* testimonials section */
+
+#testimonials{
+ display: flex;
+ margin-top: 50px;
+ justify-content: center;
+}
+
+#testimonials iframe {
+ max-width: 600px;
+ width: 100%;
+}
+
+/* features section */
+
+.box {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-around;
+ margin-top: 2em;
+ margin-bottom: 5em;
+}
+
+.box img {
+ width: 100px;
+ height: 100px;
+}
+
+/* pricing section */
+
+#pricing {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ margin-top: 10em;
+ margin-bottom: 5em;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 40%;
+  margin: 10px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.member ol {
+    list-style: none;
+}

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* general */
+
+body {
+ background: linear-gradient(90deg, #12c2e9, #c471ed, #f64f59);
+}
+
+#main {
+ font-family: 'Playfair Display', sans-serif;
+ font-weight: bolder;
+ text-align: center;
+ margin: auto;
+}
+
+/* survey form */
+
+#survey-form {
+ background: rgba(79, 246, 236, 0.2);
+ box-shadow: 0 1.5px 1.1rem rgba(0, 0, 0, 0.4);
+ float: center;
+ padding: 3%;
+}
+
+#survey-form textarea {
+  height: 100px;
+  width: 70%;
+}
+
+.info-container {
+ padding: 10px;
+ text-align: center;
+ margin-top: 1em;
+ margin-bottom: 2em;
+}
+
+/* input */
+
+input[type=text], input[type=email],
+input[type=number], textarea {
+ background: linear-gradient(45deg,#656EF7,#7B83F8);
+ border: 1px solid #4F59F6;
+ display: inline-block;
+ width: 70%;
+ height: 25px;
+}
+
+input::placeholder,textarea::placeholder {
+color: #000000; 
+}
+
+input:invalid {
+  box-shadow: 0 0 0.5px 1px red;
+}
+
+/* submit button */
+
+#submit {
+ height: 30px;
+ width: 10%;
+ background: #c471ed;
+}
+
+#submit:hover{
+ border-radius: 12%;
+}
